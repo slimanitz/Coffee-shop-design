@@ -35,7 +35,7 @@ const useStyles = makeStyles({
 const CoffeeCard = (props) => {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-  const { avatarUrl, title, subtitle, description, imageUrl } = props;
+  const { avatarUrl, title, price, description, imageUrl } = props;
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -46,7 +46,7 @@ const CoffeeCard = (props) => {
           </IconButton>
         }
         title={title}
-        subheader={subtitle}
+        subheader={price}
       />
       <CardMedia className={classes.image} image={imageUrl}></CardMedia>
       <CardContent>
