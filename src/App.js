@@ -7,18 +7,15 @@ function App() {
   return (
     <Grid container direction="column">
       <Grid item>
+        <h1>Hello</h1>
         <Header />
       </Grid>
       <Grid item container>
-        <Grid item xs={0} sm={2}>
-          Space 1
-        </Grid>
+        <Grid item xs={false} sm={2}></Grid>
         <Grid item xs={12} sm={8}>
           <Content />
         </Grid>
-        <Grid item xs={0} sm={2}>
-          Space 2
-        </Grid>
+        <Grid item xs={false} sm={2}></Grid>
       </Grid>
     </Grid>
   );

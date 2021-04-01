@@ -9,7 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import ShareIcon from "@material-ui/icons/Share";
 import Typography from "@material-ui/core/Typography";
 import CardHeader from "@material-ui/core/CardHeader";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import CardMedia from "@material-ui/core/CardMedia";
 
 const useStyles = makeStyles({
   root: {
@@ -27,16 +27,19 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
+  image: {
+    height: "150px",
+  },
 });
 
 const CoffeeCard = (props) => {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-  const { avatarSrc, title, subtitle, description, imageSrc } = props;
+  const { avatarUrl, title, subtitle, description, imageUrl } = props;
   return (
     <Card className={classes.root}>
       <CardHeader
-        avatar={<Avatar src={avatarSrc}></Avatar>}
+        avatar={<Avatar src={avatarUrl}></Avatar>}
         action={
           <IconButton aria-label="settings">
             <ShareIcon />
@@ -45,13 +48,8 @@ const CoffeeCard = (props) => {
         title={title}
         subheader={subtitle}
       />
+      <CardMedia className={classes.image} image={imageUrl}></CardMedia>
       <CardContent>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
         <Typography variant="body2" component="p">
           {description}
         </Typography>
